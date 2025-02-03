@@ -9,7 +9,9 @@ services:
       - ./config/wp_php.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./wp-app:/var/www/html # Full wordpress project
       #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
-      #- ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name # Theme development
+      - ../unwn-theme/:/var/www/html/wp-content/themes/unwn-theme # Theme development
+      - ../unwn-blocks/:/var/www/html/wp-content/plugins/unwn-blocks 
+      - ../wooswipe/:/var/www/html/wp-content/plugins/wooswipe 
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: "${DB_NAME}"
